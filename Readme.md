@@ -8,7 +8,7 @@
 
 
 **Step-2:**
-1. Actor network, is a neural network. Used as ploicy approximater, which predicts possible action values for the given state(s).
+1. Actor network, is a neural network. Used as policy approximater, which predicts possible action values for the given state(s).
 2. In this example we are using all Fully connected layers, but depending on the state(s) we choose the network. If the state is an image we use CNN based model.
 3. We use the same Actor network, as model and target. By create two different objects for model and target actors, using the same architecture.
 
@@ -19,7 +19,7 @@
 **Step-3:**
 1. Critic network, is a neural network. Used as optimal value approximater(max Q-value), for the given state and action(coming from the corresponding actor). The foward method builds two critics at once.
 2. In this example we are using all Fully connected layers, but depending on the state(s) we choose the network. If the state is an image we use CNN based model.
-
+3. We use the same critic twin network, as model and target. By create two different objects for model and target twin critic, using the same architecture.
 
 <p align="center">
   <img src="https://github.com/pasumarthi/EVA/blob/master/Phase2/images/Step3.jpg" width="350" >
