@@ -108,7 +108,7 @@
 
 1. We use critic-model(Q1) to update the actor model, by applying graiant ascent on the Q-value approximation function.
 2. Rather than doing gradinat ascent on Q-value, we are doing gradint descent on negative of Q-value.
-3. For every two critic-model updtes, we update the actor-model once. This is to delay the actor-model update, to avaoid instant updates to critics for stability.
+3. For every two critic-model updtes, we update the actor-model once. This is to delay the actor-model update, to avoid instant updates to critics for stability.
 
 <p align="center">
   <img src="https://github.com/pasumarthi/EVA/blob/master/Phase2/images/Step13.jpg" width="350" >
@@ -118,6 +118,7 @@
 **Step-14:**
 
 1. Polyak avg for critic-target models, to get stable target Q-values.
+2. For every two critic-target model updtes, we update the critic-target models once. This is to delay in the critic-target models update, to stabilize the target value.
 
 <p align="center">
   <img src="https://github.com/pasumarthi/EVA/blob/master/Phase2/images/Step14.jpg" width="350" >
@@ -127,6 +128,7 @@
 **Step-15:***
 
 1. Polyak avg for actor-target models, to get stable target Q-values.
+2. For every two actor-target models updtes, we update the critic-target models once. This is to delay in the actor-target models models update, to stabilize the target value.
 
 <p align="center">
   <img src="https://github.com/pasumarthi/EVA/blob/master/Phase2/images/Step15.jpg" width="350" >
