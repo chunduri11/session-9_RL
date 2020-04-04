@@ -1,7 +1,6 @@
 **Step-1:**
 1. This is the definition for ReplayBUffer. Here we allocate a 
 **Step-2:**
-
 1. Actor network, is a neural network. Used as ploicy approximater, which predicts possible action values for the given state(s).
 2. In this example we are using all Fully connected layers, but depending on the state(s) we choose the network. If the state is an image we use CNN based model.
 3. We use the same Actor network, as model and target. By create two different objects for model and target actors, using the same architecture.
