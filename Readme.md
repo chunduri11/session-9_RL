@@ -1,5 +1,9 @@
 **Step-1:**
-1. This is the definition for ReplayBUffer. Here we allocate a 
+1. This is the definition for ReplayBUffer. Here number samples will we information corresponding to each state in the state space of the environment, as the agent traverses each state the buffer is updated with the information of the state(state, next_state, action, reward, done).
+2. Initially the buffer values are vacant, as the agent traverses in the environment we keep appending the (s,s',a,r,done) values to the buffer. Once the buffer is filled we use the same add function to replace a buffer location with the latest updated state.
+3. The buffer is sampled in batches of desired size. These batched are used to train the TD3 algorithm in off-policy  manner.
+
+
 
 **Step-2:**
 1. Actor network, is a neural network. Used as ploicy approximater, which predicts possible action values for the given state(s).
@@ -69,7 +73,7 @@
 
 1. Target Q-values(min of two critic targets), is discounted from next_state(s') to state(s) and added to current state-action reward.(Bellmen eq)
 2. When the terminal state of the episode is reached, the next state does not exist. To show this we use flag 'done', with done being 1 if the state is the terminal state 0 otherwise. If we reached end of episode done=1, and right side of plus symbol becomes zero.
-3. detatch in pytorch
+3. detatch in pytorch is used to remove the sected model or variable form the nn graph which is put on to the device.One detatch operation is used we will not be able to calculate the gradiants for that value or use nn operation as part of the neural network library.
 
 <p align="center">
   <img src="https://github.com/pasumarthi/EVA/blob/master/Phase2/images/Step9.jpg" width="350" >
