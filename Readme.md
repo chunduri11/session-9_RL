@@ -2,7 +2,9 @@
 1. This is the definition for ReplayBUffer. Here number samples will we information corresponding to each state in the state space of the environment, as the agent traverses each state the buffer is updated with the information of the state(state, next_state, action, reward, done).
 2. Initially the buffer values are vacant, as the agent traverses in the environment we keep appending the (s,s',a,r,done) values to the buffer. Once the buffer is filled we use the same add function to replace a buffer location with the latest updated state.
 3. The buffer is sampled in batches of desired size. These batched are used to train the TD3 algorithm in off-policy  manner.
-
+<p align="center">
+  <img src="https://github.com/chunduri11/session-9_RL/blob/master/Images/step1.jpeg" width="350" >
+</p>
 
 
 **Step-2:**
